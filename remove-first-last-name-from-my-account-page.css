@@ -1,0 +1,6 @@
+.woocommerce-EditAccountForm .woocommerce-form-row--first {
+  display: none;
+}
+.woocommerce-EditAccountForm .woocommerce-form-row--last {
+  display: none;
+}
