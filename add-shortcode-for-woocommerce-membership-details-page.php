@@ -58,7 +58,7 @@ function get_members_area_user_membership_details( $user_membership ) {
 function sv_wcm_my_memberships_content_shortcode() {
 
 	// bail if Memberships isn't active or we're in the admin
-	if ( ! function_exists( 'wc_memberships' ) || is_admin() ) {
+	if ( ! function_exists( 'wc_memberships' ) || is_admin() || ! is_user_logged_in()) {
 		return;
 	}
 

@@ -9,18 +9,28 @@
  */
 
 function sv_wcm_add_custom_details_to_my_account($details, $membership) {
-	$new_details = [
-		'member_id' => [
-			'label'   => __( 'ID', 'my-textdomain' ),
-			'content' => $membership->get_id(),
-			'class'   => 'my-membership-detail-user-membership-id',
-		],
-		'member_plan' => [
-			'label'   => __( 'Текущий тариф', 'my-textdomain' ),
-			'content' => $membership->get_plan()->get_name(),
-			'class'   => 'my-membership-detail-user-membership-plan-name',
-		],
-	];
+	// bail if Memberships isn't active or we're in the admin
+	if ( ! function_exists( 'wc_memberships' ) || is_admin() || ! is_user_logged_in()) {
+		return;
+	}
+
+	$new_details = [];
+
+	if ( ! is_null($membership) ) {
+		$new_details = [
+			'member_id' => [
+				'label'   => __( 'ID', 'my-textdomain' ),
+				'content' => $membership->get_id(),
+				'class'   => 'my-membership-detail-user-membership-id',
+			],
+			'member_plan' => [
+				'label'   => __( 'Текущий тариф', 'my-textdomain' ),
+				'content' => $membership->get_plan()->get_name(),
+				'class'   => 'my-membership-detail-user-membership-plan-name',
+			],
+		];
+	}
+
 
 	foreach ( $details as $detail ) {
 		$new_details[] = $detail;
@@ -28,4 +38,5 @@ function sv_wcm_add_custom_details_to_my_account($details, $membership) {
 
 	return $new_details;
 }
+
 add_filter( 'wc_memberships_members_area_my_membership_details', sv_wcm_add_custom_details_to_my_account, 10, 2 );
