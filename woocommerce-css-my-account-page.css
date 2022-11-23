@@ -1,0 +1,44 @@
+
+/* Disable standard woocommerce navigation menu */
+.woocommerce-MyAccount-navigation {
+  display:none;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+  width:100%;
+}
+
+
+/* Remove first and last name fields from edit account page */
+.woocommerce-EditAccountForm .woocommerce-form-row--first {
+  display: none;
+}
+.woocommerce-EditAccountForm .woocommerce-form-row--last {
+  display: none;
+}
+
+/* Remove "(optional)" label from woocommerce membership user fields */
+.my-membership-section span.optional {
+  display: none;
+}
+
+/* Remove action buttons on member area page in woocommmerce memberships */
+.woocommerce-account-my-memberships td.membership-actions.order-actions {
+  display: none;  
+}
+
+/* Hide shopping cart when it is empty Kadence theme*/
+.header-cart-wrap .header-cart-empty-check.header-cart-is-empty-true + .header-cart-inner-wrap {
+  display: none;
+}
+.header-mobile-cart-wrap .header-cart-inner-wrap.header-cart-is-empty-true {
+  display: none;
+}
+
+/* Hide shopping cart for logged out users Kadence theme*/
+body:not(.logged-in) .header-cart-wrap .header-cart-inner-wrap {
+  display: none;
+}
+body:not(.logged-in) .header-mobile-cart-wrap .header-cart-inner-wrap {
+  display: none;
+}
