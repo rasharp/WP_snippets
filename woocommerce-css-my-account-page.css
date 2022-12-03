@@ -42,3 +42,8 @@ body:not(.logged-in) .header-cart-wrap .header-cart-inner-wrap {
 body:not(.logged-in) .header-mobile-cart-wrap .header-cart-inner-wrap {
   display: none;
 }
+
+/* Hide View Cart popup for Popup menu Kadence theme */
+.woocommerce.widget_shopping_cart .buttons a:not(.checkout), .woocommerce .widget_shopping_cart .buttons a:not(.checkout) {
+    display: none;
+}
