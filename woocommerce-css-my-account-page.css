@@ -27,6 +27,13 @@
   display: none;  
 }
 
+
+/**
+ * 
+ * THEME SPECIFIC STYLES
+ * 
+**/
+
 /* Hide shopping cart when it is empty Kadence theme*/
 .header-cart-wrap .header-cart-empty-check.header-cart-is-empty-true + .header-cart-inner-wrap {
   display: none;
@@ -46,4 +53,10 @@ body:not(.logged-in) .header-mobile-cart-wrap .header-cart-inner-wrap {
 /* Hide View Cart popup for Popup menu Kadence theme */
 .woocommerce.widget_shopping_cart .buttons a:not(.checkout), .woocommerce .widget_shopping_cart .buttons a:not(.checkout) {
     display: none;
+}
+
+
+/* Hide Show Cart button on minni-Cart panel for Blocksy theme*/
+.woocommerce-mini-cart__buttons.buttons :not(.checkout) {
+  display: none;
 }

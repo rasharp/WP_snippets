@@ -1,7 +1,8 @@
 <?php // only copy this line if needed
 
 /**
- * Remove the "Cancel" action for members from the "Membership Details" table
+ * Remove the "Cancel" action for members from the "Membership Details" table and
+ * Remove the "Cancel" action for members from the "My Memberships" table
  * Memberships will have to be cancelled manually by a shop admin
  *
  * @param array $actions the array of membership action links
@@ -17,4 +18,6 @@ function sv_wcm_remove_cancel_button( $actions ) {
   return $actions;
 }
 
+
 add_filter( 'wc_memberships_members_area_my-membership-details_actions', 'sv_wcm_remove_cancel_button' );
+add_filter( 'wc_memberships_members_area_my-memberships_actions', 'sv_wcm_remove_cancel_button' );
