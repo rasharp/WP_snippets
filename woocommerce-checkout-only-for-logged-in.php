@@ -1,4 +1,5 @@
 <?php // only copy this line if needed
+
 /**
  * Function for `woocommerce_before_checkout_form` action-hook.
  * 
